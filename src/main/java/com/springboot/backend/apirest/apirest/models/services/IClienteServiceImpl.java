@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.springboot.backend.apirest.apirest.models.dao.IClienteDao;
 import com.springboot.backend.apirest.apirest.models.entity.Cliente;
+import com.springboot.backend.apirest.apirest.models.entity.Region;
 
 @Service
 public class IClienteServiceImpl implements IClienteService{
@@ -44,6 +45,12 @@ public class IClienteServiceImpl implements IClienteService{
 	@Override
 	public void delete(Long id) {
 		clienteDao.deleteById(id);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Region> findAllRegiones() {
+		return clienteDao.findAllRegiones();
 	}
 
 }
