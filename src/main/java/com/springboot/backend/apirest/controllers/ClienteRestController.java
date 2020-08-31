@@ -53,8 +53,6 @@ public class ClienteRestController {
 	
 	@Autowired
 	private IUploadFileService uploadFileService;
-	
-	
 
 	@GetMapping("/clientes")
 	public List<Cliente> index() {
